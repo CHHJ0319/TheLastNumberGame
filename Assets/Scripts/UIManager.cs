@@ -1,20 +1,15 @@
-using Actor;
-using TMPro;
-using UnityEngine;
+using UI;
 
-public class UIManager : MonoBehaviour
+public static class UIManager
 {
-    [SerializeField] private Hand playerHand;
-    [SerializeField] private Hand aiHand;
-
-    private void Awake()
+    private static UIController uiController;
+    public static void SetUIController(UIController controller)
     {
-        Events.PlayerEvents.OnPlayerTurnStarted += CreatePlayerHand;
+        uiController = controller;
     }
 
-    public void CreatePlayerHand(int curNum)
+    public static bool CanSubmit()
     {
-        StartCoroutine(playerHand.CreateHand(curNum));
+        return uiController.CanSubmit();
     }
-
 }

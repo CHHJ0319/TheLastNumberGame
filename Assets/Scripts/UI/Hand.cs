@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Actor
+namespace UI
 {
     public class Hand : MonoBehaviour
     {
@@ -22,6 +22,11 @@ namespace Actor
                 CreateCard(curNum + i);
                 yield return new WaitForSeconds(spawnDelay);
             }
+        }
+
+        public int GetSelectedCount()
+        {
+            return selectedNumbers.Count;
         }
 
         private void CreateCard(int num)

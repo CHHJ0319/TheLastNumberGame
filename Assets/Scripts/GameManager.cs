@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
     private static int totalRound = 10;
     void Awake()
     {
-        RoundManager.Initialize();
     }
 
     private void Start()
