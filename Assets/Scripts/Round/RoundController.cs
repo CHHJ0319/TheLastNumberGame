@@ -53,23 +53,25 @@ namespace Round
                     yield return StartCoroutine(StartPlayerTurn());
 
                     nextNum = playerNumbers[^1];
-                    curNum = nextNum + 1;
                     if (CheckTargetReached())
                     {
                         isPlayerWinner = false;
                         yield break;
                     }
 
+                    curNum = nextNum + 1;
                     yield return null;
 
-                    //StartAITurn();
-                    //lastNum = result[^1];
-
-                    //if (CheckTargetReached(lastNum, targetNum))
+                    yield return StartCoroutine(StartAITurn());
+                    //nextNum = aiNumbers[^1];
+                    //if (CheckTargetReached())
                     //{
                     //    isPlayerWinner = true;
-                    //    return;
+                    //    yield break;
                     //}
+
+                    //curNum = nextNum + 1;
+                    yield return null;
                 }
             }
             else
@@ -121,10 +123,12 @@ namespace Round
             isSelectionComplete = false;
         }
 
-        //private IEnumerator StartAITurn()
-        //{
+        private IEnumerator StartAITurn()
+        {
+            Events.AIEvents.StartAITurn(curNum, targetNum);
 
-        //}
+            yield return null;
+        }
 
         private bool CheckTargetReached()
         {

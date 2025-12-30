@@ -16,11 +16,17 @@ namespace UI
         {
             UIManager.SetUIController(this);
             Events.PlayerEvents.OnPlayerTurnStarted += CreatePlayerHand;
+            Events.AIEvents.OnAITurnStarted += CreateAIHand;
         }
 
         public void CreatePlayerHand(int curNum, int targetNum)
         {
             StartCoroutine(playerHand.CreateHand(curNum, targetNum));
+        }
+
+        public void CreateAIHand(int curNum, int targetNum)
+        {
+            StartCoroutine(aiHand.CreateHand(curNum, targetNum));
         }
 
         public void UpdateTargetNumDisplay(int number)
