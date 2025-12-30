@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace UI 
@@ -7,15 +10,22 @@ namespace UI
         [SerializeField] private Hand playerHand;
         [SerializeField] private Hand aiHand;
 
+        [SerializeField] private TextMeshProUGUI targetNumDisplay;
+
         private void Awake()
         {
             UIManager.SetUIController(this);
             Events.PlayerEvents.OnPlayerTurnStarted += CreatePlayerHand;
         }
 
-        public void CreatePlayerHand(int curNum)
+        public void CreatePlayerHand(int curNum, int targetNum)
         {
-            StartCoroutine(playerHand.CreateHand(curNum));
+            StartCoroutine(playerHand.CreateHand(curNum, targetNum));
+        }
+
+        public void UpdateTargetNumDisplay(int number)
+        {
+            targetNumDisplay.text = number.ToString();
         }
 
         public bool CanSubmit()
@@ -28,6 +38,11 @@ namespace UI
             {
                 return false;
             }
+        }
+
+        public List<int> GetPlayerNums()
+        {
+            return playerHand.GetselectedNums();
         }
     }
 }

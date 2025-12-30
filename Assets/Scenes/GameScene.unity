@@ -614,6 +614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHand: {fileID: 468882536}
   aiHand: {fileID: 0}
+  targetNumDisplay: {fileID: 1822372367}
 --- !u!1 &1446643527
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +941,7 @@ GameObject:
   - component: {fileID: 1822372368}
   - component: {fileID: 1822372367}
   m_Layer: 5
-  m_Name: TargetNum
+  m_Name: targetNumDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

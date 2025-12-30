@@ -12,21 +12,34 @@ namespace UI
         private float spawnDelay = 0.2f;
 
         private int startNum;
-        private List<int> selectedNumbers = new List<int>();
+        private List<int> selectedNums = new List<int>();
 
-        public IEnumerator CreateHand(int curNum)
+        public IEnumerator CreateHand(int curNum, int targetNum)
         {
             startNum = curNum;
+            selectedNums = new List<int>();
+            ClearHand();
+
             for (int i = 0; i < 3; i++)
             {
-                CreateCard(curNum + i);
-                yield return new WaitForSeconds(spawnDelay);
+                int cardNum = curNum + i;
+                if(cardNum <= targetNum)
+                {
+                    CreateCard(cardNum);
+                    yield return new WaitForSeconds(spawnDelay);
+                }
+
             }
         }
 
         public int GetSelectedCount()
         {
-            return selectedNumbers.Count;
+            return selectedNums.Count;
+        }
+
+        public List<int> GetselectedNums()
+        {
+            return new List<int>(selectedNums);
         }
 
         private void CreateCard(int num)
@@ -44,9 +57,17 @@ namespace UI
             }
         }
 
+        public void ClearHand()
+        {
+            foreach (Transform child in transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+        }
+
         private void OnCardSelected(int clickedNum, GameObject cardObj, Button btn)
         {
-            if (selectedNumbers.Contains(clickedNum))
+            if (selectedNums.Contains(clickedNum))
             {
                 HandleCancel(clickedNum, cardObj, btn);
             }
@@ -58,12 +79,12 @@ namespace UI
 
         private void HandleSelect(int clickedNum, GameObject cardObj, Button btn)
         {
-            bool isValid = (selectedNumbers.Count == 0 && clickedNum == startNum) ||
-                           (selectedNumbers.Count > 0 && clickedNum == selectedNumbers[^1] + 1);
+            bool isValid = (selectedNums.Count == 0 && clickedNum == startNum) ||
+                           (selectedNums.Count > 0 && clickedNum == selectedNums[^1] + 1);
 
             if (isValid)
             {
-                selectedNumbers.Add(clickedNum);
+                selectedNums.Add(clickedNum);
                 SetCardVisual(cardObj, true);
             }
             else
@@ -73,9 +94,9 @@ namespace UI
 
         private void HandleCancel(int clickedNum, GameObject cardObj, Button btn)
         {
-            if (selectedNumbers[^1] == clickedNum)
+            if (selectedNums[^1] == clickedNum)
             {
-                selectedNumbers.RemoveAt(selectedNumbers.Count - 1);
+                selectedNums.RemoveAt(selectedNums.Count - 1);
                 SetCardVisual(cardObj, false); 
             }
             else
