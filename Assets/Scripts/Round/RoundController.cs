@@ -9,6 +9,8 @@ namespace Round
 {
     public class RoundController : MonoBehaviour
     {
+        public AIController aIController;
+
         private int targetNum = 0;
         private int curNum;
         private int nextNum;
@@ -41,17 +43,18 @@ namespace Round
         private void StartIntroPhase()
         {
             SetTargetNum();
+            aiNumbers = new List<int>();
+            SetAIStrategy();
         }
 
         private IEnumerator StartMainPhase(int curRound)
         {
             curNum = 1;
-            if (playerFirstRounds.Contains(curRound))
+            if (!playerFirstRounds.Contains(curRound))
             {
                 while (true)
                 {
                     yield return StartCoroutine(StartPlayerTurn());
-
                     nextNum = playerNumbers[^1];
                     if (CheckTargetReached())
                     {
@@ -63,39 +66,43 @@ namespace Round
                     yield return null;
 
                     yield return StartCoroutine(StartAITurn());
-                    //nextNum = aiNumbers[^1];
-                    //if (CheckTargetReached())
-                    //{
-                    //    isPlayerWinner = true;
-                    //    yield break;
-                    //}
+                    nextNum = aiNumbers[^1];
+                    if (CheckTargetReached())
+                    {
+                        isPlayerWinner = true;
+                        yield break;
+                    }
 
-                    //curNum = nextNum + 1;
+                    curNum = nextNum + 1;
                     yield return null;
                 }
             }
             else
             {
-                //while (true)
-                //{
-                //    var result = StartAITurn();
-                //    int lastNum = result[^1];
+                while (true)
+                {
+                    yield return StartCoroutine(StartAITurn());
+                    nextNum = aiNumbers[^1];
+                    if (CheckTargetReached())
+                    {
+                        isPlayerWinner = true;
+                        yield break;
+                    }
 
-                //    if (CheckTargetReached(lastNum, targetNum))
-                //    {
-                //        isPlayerWinner = true;
-                //        return;
-                //    }
+                    curNum = nextNum + 1;
+                    yield return null;
 
-                //    result = StartPlayerTurn(curNum);
-                //    lastNum = result[^1];
+                    yield return StartCoroutine(StartPlayerTurn());
+                    nextNum = playerNumbers[^1];
+                    if (CheckTargetReached())
+                    {
+                        isPlayerWinner = false;
+                        yield break;
+                    }
 
-                //    if (CheckTargetReached(lastNum, targetNum))
-                //    {
-                //        isPlayerWinner = false;
-                //        return;
-                //    }
-                //}
+                    curNum = nextNum + 1;
+                    yield return null;
+                }
             }
         }
         private void StartOutroPhase()
@@ -108,6 +115,11 @@ namespace Round
         {
             targetNum = Random.Range(13, 31);
             UIManager.UpdateTargetNumDisplay(targetNum);
+        }
+
+        private void SetAIStrategy()
+        {
+            aIController.Initalize(targetNum);
         }
 
         private IEnumerator StartPlayerTurn()
@@ -125,7 +137,14 @@ namespace Round
 
         private IEnumerator StartAITurn()
         {
-            Events.AIEvents.StartAITurn(curNum, targetNum);
+           // Events.AIEvents.StartAITurn(curNum, targetNum);
+            int countToCall = aIController.DecideHowManyToCall(curNum);
+
+            aiNumbers = new List<int>();
+            for (int i = 0; i < countToCall; i++)
+            {
+                aiNumbers.Add(curNum + i);
+            }
 
             yield return null;
         }
