@@ -9,15 +9,13 @@ namespace Round
     public class RoundController : MonoBehaviour
     {
         private int targetNum = 0;
-        private bool isPlayerWinner;
         private int curNum;
+
+        private bool isPlayerWinner;
         private bool isSelectionComplete;
 
         private List<int> playerChoices;
         private List<int> aiChoices;
-
-        private IntroPhase introPhase;
-        private OutroPhase outroPhase;
 
         private readonly HashSet<int> playerFirstRounds = new HashSet<int> { 1, 3, 4, 6, 7, 9, 10 };
 
@@ -28,20 +26,22 @@ namespace Round
 
         public void Initialize ()
         {
-            introPhase = new IntroPhase();
-            outroPhase = new OutroPhase();
-
             Events.PlayerEvents.OnPlayerTurnFinished += FinishPlayerTurn;
         }
 
         public void StartRound(int curRound)
         {
-            introPhase.StartPhase(ref targetNum);
-            StartMainPhase(curRound, targetNum, ref isPlayerWinner);
-            outroPhase.StartPhase(isPlayerWinner);
+            StartIntroPhase();
+            StartMainPhase(curRound);
+            StartOutroPhase();
         }
 
-        public void StartMainPhase(int curRound, int targetNum, ref bool isPlayerWinner)
+        private void StartIntroPhase()
+        {
+            SetTargetNum();
+        }
+
+        private void StartMainPhase(int curRound)
         {
             curNum = 1;
             if (playerFirstRounds.Contains(curRound))
@@ -91,6 +91,16 @@ namespace Round
                 //}
             }
         }
+        private void StartOutroPhase()
+        {
+            
+        }
+
+
+        private void SetTargetNum()
+        {
+            targetNum = Random.Range(13, 31);
+        }
 
         private IEnumerator StartPlayerTurn(int curNum)
         {
@@ -101,7 +111,7 @@ namespace Round
                 yield return null;
             }
 
-            int a = 1;
+            isSelectionComplete = false;
         }
 
         //private IEnumerator StartAITurn()

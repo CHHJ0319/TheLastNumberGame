@@ -1,13 +1,10 @@
-using Round;
-
-
 public static class RoundManager
 {
     
     private static Round.RoundController roundController;
 
 
-    public static void SetRoundController(RoundController controller)
+    public static void SetRoundController(Round.RoundController controller)
     {
         roundController = controller;
     }
@@ -17,9 +14,4 @@ public static class RoundManager
         roundController.Initialize();
         roundController.StartRound(curRound);
     }
-
-    //public static void FinishPlayerTurn()
-    //{
-    //    roundController.FinishPlayerTurn();
-    //}
 }
