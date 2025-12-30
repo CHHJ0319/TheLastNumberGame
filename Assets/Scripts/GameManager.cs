@@ -24,6 +24,14 @@ public class GameManager : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
+        if (currentScene.name == "GameScene")
+        {
+            StartMainSecne();
+        }
+    }
+
+    private void StartMainSecne()
+    {
         //for (int i = 0; i < 3; i++)
         //{
         //    RoundManager.StartRound(i + 1);
@@ -38,10 +46,6 @@ public class GameManager : MonoBehaviour
         //{
         //    RoundManager.StartRound(i + 1);
         //}
-
-        if (currentScene.name == "GameScene")
-        {
-            RoundManager.StartRound(10);
-        }
+        RoundManager.StartRound(10);
     }
 }
