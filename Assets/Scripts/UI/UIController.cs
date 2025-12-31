@@ -7,6 +7,11 @@ namespace UI
 {
     public class UIController : MonoBehaviour
     {
+        [Header("TitleScene")]
+        [SerializeField] private GameObject startPrompt;
+        [SerializeField] private GameObject menuButtons;
+
+        [Header("GameScene")]
         [SerializeField] private Hand playerHand;
         [SerializeField] private Hand aiHand;
 
@@ -15,8 +20,16 @@ namespace UI
         private void Awake()
         {
             UIManager.SetUIController(this);
+
+            Events.GameEvents.OnFirstInput += ShowMainMenu;
             Events.PlayerEvents.OnPlayerTurnStarted += CreatePlayerHand;
             Events.AIEvents.OnAITurnStarted += CreateAIHand;
+        }
+
+        public void ShowMainMenu()
+        {
+            startPrompt.SetActive(false);
+            menuButtons.SetActive(true);
         }
 
         public void CreatePlayerHand(int curNum, int targetNum)
