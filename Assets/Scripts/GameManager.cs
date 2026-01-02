@@ -8,29 +8,17 @@ public class GameManager : MonoBehaviour
 
     private static int totalRound = 10;
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private static void Initialize()
-    {
-        GameObject go = new GameObject("GameManager");
-        Instance = go.AddComponent<GameManager>();
-        DontDestroyOnLoad(go);
-    }
-
-    void Awake()
-    {
-    }
-
     private void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
         if (currentScene.name == "GameScene")
         {
-            StartMainSecne();
+            StartGameSecne();
         }
     }
 
-    private void StartMainSecne()
+    private void StartGameSecne()
     {
         //for (int i = 0; i < 3; i++)
         //{
