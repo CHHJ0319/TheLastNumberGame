@@ -925,7 +925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1516054149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1312,6 +1312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 468882536}
+  submitButton: {fileID: 1516054153}
 --- !u!224 &1687137770 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 43427119545244633, guid: a5ebfd377137fce45b253a49151dff5d, type: 3}
