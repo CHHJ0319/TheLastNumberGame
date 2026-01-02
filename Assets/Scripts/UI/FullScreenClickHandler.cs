@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
+using UnityEngine.SceneManagement;
 
-namespace UI.TestScene
+namespace UI
 {
     public class FullScreenClickHandler : MonoBehaviour
     {
         private System.IDisposable _anyKeySubscription;
+
+        private string targetSceneName = "GameScene";
 
         void OnEnable()
         {
@@ -39,8 +42,17 @@ namespace UI.TestScene
 
         void HandleAnyInput()
         {
-            Events.GameEvents.ShowMainMenu();
-            gameObject.SetActive(false);
+            string sceneName = SceneManager.GetActiveScene().name;
+
+            if (sceneName == "TitleScene")
+            {
+                Events.GameEvents.ShowMainMenu();
+                gameObject.SetActive(false);
+            }
+            else if (sceneName == "IntroScene")
+            {
+                Algorythm.SceneLoader.LoadSceneByName(targetSceneName);
+            }
         }
     }
 }

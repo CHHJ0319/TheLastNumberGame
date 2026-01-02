@@ -5,7 +5,8 @@ namespace UI.TestScene
 {
     public class MenuButton : MonoBehaviour
     {
-        private string targetSceneName = "GameScene";
+        private string targetSceneName = "IntroScene";
+
         private void Start()
         {
             GetComponent<Button>().onClick.AddListener(OnClicked);
