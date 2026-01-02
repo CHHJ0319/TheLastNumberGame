@@ -767,8 +767,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPrompt: {fileID: 0}
   menuButtons: {fileID: 0}
-  playerHand: {fileID: 468882536}
-  aiHand: {fileID: 1986156530}
+  player: {fileID: 1672913372}
+  aiPlayer: {fileID: 1648531283}
   targetNumDisplay: {fileID: 1822372367}
 --- !u!1 &1446643527
 GameObject:
@@ -1116,8 +1116,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1146452709}
   - {fileID: 1986156528}
+  - {fileID: 1146452709}
   m_Father: {fileID: 1182742552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -1137,6 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b36a64cbe388e46bdf7da4d808d533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hand: {fileID: 1986156530}
 --- !u!114 &1648531284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,6 +1230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1672913369}
+  - component: {fileID: 1672913372}
   - component: {fileID: 1672913371}
   - component: {fileID: 1672913370}
   m_Layer: 5
@@ -1297,6 +1299,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672913368}
   m_CullTransparentMesh: 1
+--- !u!114 &1672913372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672913368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1331ed5b74c0f6246ad27368f85f44b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 468882536}
 --- !u!224 &1687137770 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 43427119545244633, guid: a5ebfd377137fce45b253a49151dff5d, type: 3}

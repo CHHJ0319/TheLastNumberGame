@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
+    [SerializeField] private UI.Hand hand;
+
     private int maxSelectable = 3;
 
     private List<int> winningNumbers;
@@ -14,6 +16,11 @@ public class AIController : MonoBehaviour
         calculator = new Algorythm.NimStrategyCalculator();
 
         winningNumbers = calculator.GenerateWinningNumbers(targetNum, maxSelectable);
+    }
+
+    public void CreateHand(int curNum, int targetNum)
+    {
+        StartCoroutine(hand.CreateHand(curNum, targetNum));
     }
 
     public int DecideHowManyToCall(int currentNum)

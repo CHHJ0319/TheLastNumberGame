@@ -37,7 +37,7 @@ namespace UI
             return selectedNums.Count;
         }
 
-        public List<int> GetselectedNums()
+        public List<int> GetSelectedNums()
         {
             return new List<int>(selectedNums);
         }

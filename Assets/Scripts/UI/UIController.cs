@@ -1,3 +1,4 @@
+using Player;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -12,8 +13,8 @@ namespace UI
         [SerializeField] private GameObject menuButtons;
 
         [Header("GameScene")]
-        [SerializeField] private Hand playerHand;
-        [SerializeField] private Hand aiHand;
+        [SerializeField] private PlayerController player;
+        [SerializeField] private AIController aiPlayer;
 
         [SerializeField] private TextMeshProUGUI targetNumDisplay;
 
@@ -41,12 +42,12 @@ namespace UI
 
         public void CreatePlayerHand(int curNum, int targetNum)
         {
-            StartCoroutine(playerHand.CreateHand(curNum, targetNum));
+            player.CreateHand(curNum, targetNum);
         }
 
         public void CreateAIHand(int curNum, int targetNum)
         {
-            StartCoroutine(aiHand.CreateHand(curNum, targetNum));
+            aiPlayer.CreateHand(curNum, targetNum);
         }
 
         public void UpdateTargetNumDisplay(int number)
@@ -56,7 +57,7 @@ namespace UI
 
         public bool CanSubmit()
         {
-            if (playerHand.GetSelectedCount() > 0)
+            if (player.GetSelectedCount() > 0)
             {
                 return true;
             }
@@ -68,7 +69,7 @@ namespace UI
 
         public List<int> GetPlayerNums()
         {
-            return playerHand.GetselectedNums();
+            return player.GetSelectedNums();
         }
     }
 }
