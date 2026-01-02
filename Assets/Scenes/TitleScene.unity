@@ -535,8 +535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPrompt: {fileID: 2090712293}
   menuButtons: {fileID: 509802498}
-  playerHand: {fileID: 0}
-  aiHand: {fileID: 0}
+  player: {fileID: 0}
+  aiPlayer: {fileID: 0}
   targetNumDisplay: {fileID: 0}
 --- !u!1 &850881360
 GameObject:
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 976153043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae00cb0684184134ba95ab0d3a134823, type: 3}
+  m_Script: {fileID: 11500000, guid: df408bccecefb6a4b8ec37eb8c835ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1162322310

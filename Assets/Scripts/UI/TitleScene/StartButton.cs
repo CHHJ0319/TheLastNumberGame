@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace UI.TestScene
 {
-    public class MenuButton : MonoBehaviour
+    public class StartButton : MonoBehaviour
     {
         private string targetSceneName = "IntroScene";
 
