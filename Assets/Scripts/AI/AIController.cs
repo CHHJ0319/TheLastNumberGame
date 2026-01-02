@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class AIController : MonoBehaviour
@@ -23,22 +25,46 @@ public class AIController : MonoBehaviour
         StartCoroutine(hand.CreateHand(curNum, targetNum));
     }
 
-    public int DecideHowManyToCall(int currentNum)
+    public int DecideHowManyToCall(int currentNum, int startNimStrategyPoint)
     {
-        foreach (int point in winningNumbers)
+        if (winningNumbers == null || winningNumbers.Count < startNimStrategyPoint || startNimStrategyPoint < 0)
         {
+            return PickRandom();
+        }
+
+        if(startNimStrategyPoint == 0)
+        {
+            startNimStrategyPoint = winningNumbers.Count + 1;
+        }
+
+        for (int i = 0; i < winningNumbers.Count; i++)
+        {
+            int point = winningNumbers[i];
             if (point >= currentNum)
             {
-                int diff = point - currentNum + 1;
-
-                if (diff <= maxSelectable)
+                if (winningNumbers.Count - i < startNimStrategyPoint)
                 {
-                    return diff;
+                    int diff = point - currentNum + 1;
+
+                    if (diff <= maxSelectable)
+                    {
+                        return diff;
+                    }
+                    break;
                 }
-                break;
+                else
+                {
+                    PickRandom();
+                    break;
+                }
             }
         }
 
+        return PickRandom();
+    }
+
+    private int PickRandom()
+    {
         return Random.Range(1, maxSelectable + 1);
     }
 }

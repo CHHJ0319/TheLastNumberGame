@@ -135,7 +135,7 @@ namespace Round
         private IEnumerator StartAITurn()
         {
            // Events.AIEvents.StartAITurn(curNum, targetNum);
-            int countToCall = aIController.DecideHowManyToCall(curNum);
+            int countToCall = aIController.DecideHowManyToCall(curNum, 3);
 
             aiNumbers = new List<int>();
             for (int i = 0; i < countToCall; i++)
