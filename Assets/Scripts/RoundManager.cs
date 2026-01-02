@@ -11,7 +11,6 @@ public static class RoundManager
 
     public static void StartRound(int curRound)
     {
-        roundController.Initialize();
         roundController.StartRound(curRound);
     }
 }

@@ -17,13 +17,20 @@ namespace UI
 
         [SerializeField] private TextMeshProUGUI targetNumDisplay;
 
-        private void Awake()
+        private void OnEnable()
         {
             UIManager.SetUIController(this);
 
             Events.GameEvents.OnFirstInput += ShowMainMenu;
             Events.PlayerEvents.OnPlayerTurnStarted += CreatePlayerHand;
             Events.AIEvents.OnAITurnStarted += CreateAIHand;
+        }
+
+        private void OnDisable()
+        {
+            Events.GameEvents.OnFirstInput -= ShowMainMenu;
+            Events.PlayerEvents.OnPlayerTurnStarted -= CreatePlayerHand;
+            Events.AIEvents.OnAITurnStarted -= CreateAIHand;
         }
 
         public void ShowMainMenu()

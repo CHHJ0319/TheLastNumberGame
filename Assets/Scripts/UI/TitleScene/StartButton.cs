@@ -6,14 +6,14 @@ namespace UI.TestScene
     public class MenuButton : MonoBehaviour
     {
         private string targetSceneName = "GameScene";
-        private void Awake()
+        private void Start()
         {
             GetComponent<Button>().onClick.AddListener(OnClicked);
         }
 
         private void OnClicked()
         {
-            SceneLoader.LoadSceneByName(targetSceneName);
+            Algorythm.SceneLoader.LoadSceneByName(targetSceneName);
         }
     }
 }

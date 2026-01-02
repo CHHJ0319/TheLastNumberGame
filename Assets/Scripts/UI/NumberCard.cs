@@ -3,7 +3,7 @@ using TMPro;
 
 namespace UI
 {
-    public class TestCard : MonoBehaviour
+    public class NumberCard : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI cardText;
 

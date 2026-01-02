@@ -23,13 +23,10 @@ namespace Round
 
         private readonly HashSet<int> playerFirstRounds = new HashSet<int> { 1, 3, 4, 6, 7, 9, 10 };
 
-        private void Awake()
+        private void OnEnable()
         {
             RoundManager.SetRoundController(this);
-        }
 
-        public void Initialize ()
-        {
             Events.PlayerEvents.OnPlayerTurnFinished += FinishPlayerTurn;
         }
 

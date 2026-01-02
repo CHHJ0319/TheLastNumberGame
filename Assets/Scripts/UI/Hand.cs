@@ -45,7 +45,7 @@ namespace UI
         private void CreateCard(int num)
         {
             GameObject newCard = Instantiate(cardPrefab, transform);
-            TestCard cardScript = newCard.GetComponent<TestCard>();
+            NumberCard cardScript = newCard.GetComponent<NumberCard>();
             if (cardScript != null)
             {
                 cardScript.SetNumber(num);
