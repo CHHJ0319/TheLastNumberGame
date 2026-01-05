@@ -16,6 +16,15 @@ public static class UIManager
         uiController = controller;
     }
 
+    public static void SetGameScene(int curRound, bool[] roundResults)
+    {
+        if (uiController != null)
+        {
+            bool[] resultsCopy = (bool[])roundResults.Clone();
+            uiController.SetRoundCounters(curRound, resultsCopy);
+        }
+    }
+
     public static void SetEndingScene()
     {
         if (uiController != null)

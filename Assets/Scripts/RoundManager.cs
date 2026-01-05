@@ -19,6 +19,12 @@ public static class RoundManager
     public static void StartRound()
     {
         roundController.StartRound(currentRound);
+        UIManager.SetGameScene(currentRound, roundWinResults);
+    }
+
+    public static int GetCurrentRound()
+    {
+        return currentRound;
     }
 
     private static void RecordRoundResult(int curRound, bool isPlayerWinner)

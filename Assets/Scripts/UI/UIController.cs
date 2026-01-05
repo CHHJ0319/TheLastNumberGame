@@ -80,11 +80,20 @@ namespace UI
             return player.GetSelectedNums();
         }
 
-        public void SetRoundCounters(int roundCount)
+        public void SetRoundCounters(int curRound, bool[] roundResults)
         {
-            foreach (Transform child in roundConters.transform)
+            for (int i = 0; i < curRound; i++)
             {
-                child.gameObject.SetActive(true);
+                Transform child = roundConters.transform.GetChild(i);
+
+                if (i < curRound - 1)
+                {
+                    child.gameObject.SetActive(true);
+                }
+                else
+                {
+                    child.gameObject.SetActive(false);
+                }
             }
         }
 
