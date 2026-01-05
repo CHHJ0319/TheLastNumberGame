@@ -9,10 +9,18 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Events.RoundEvents.Clear();
+        UIManager.Initailize();
+        RoundManager.Initialize();
+
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "GameScene")
         {
             StartGameSecne();
+        }
+        else if (currentScene.name == "EndingScene")
+        {
+            StartEndingSecne();
         }
     }
 
@@ -21,5 +29,8 @@ public class GameManager : MonoBehaviour
         RoundManager.StartRound();
     }
 
-    
+    private void StartEndingSecne()
+    {
+        UIManager.SetEndingScene();
+    }
 }

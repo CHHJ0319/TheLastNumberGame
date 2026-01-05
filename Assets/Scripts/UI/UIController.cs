@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI 
 {
@@ -19,6 +20,11 @@ namespace UI
         [SerializeField] private GameObject roundConters;
 
         [SerializeField] private TextMeshProUGUI targetNumDisplay;
+
+        [Header("EndingScene")]
+        [SerializeField] private Button nextButton;
+        [SerializeField] private Button retryButton;
+
 
         private void OnEnable()
         {
@@ -79,6 +85,20 @@ namespace UI
             foreach (Transform child in roundConters.transform)
             {
                 child.gameObject.SetActive(true);
+            }
+        }
+
+        public void SetEndingSceneUI(bool isPlayerWinner)
+        {
+            if(isPlayerWinner)
+            {
+                nextButton.gameObject.SetActive(true);
+                retryButton.gameObject.SetActive(false);
+            }
+            else
+            {
+                nextButton.gameObject.SetActive(false);
+                retryButton.gameObject.SetActive(true);
             }
         }
     }

@@ -6,6 +6,11 @@ public static class RoundManager
     private static int currentRound = 1;
     private static bool[] roundWinResults = new bool[totalRound];
 
+    public static void Initialize()
+    {
+        Events.RoundEvents.OnRoundEnded += RecordRoundResult;
+    }
+
     public static void SetRoundController(Round.RoundController controller)
     {
         roundController = controller;
@@ -13,9 +18,6 @@ public static class RoundManager
 
     public static void StartRound()
     {
-        Events.RoundEvents.Clear();
-        Events.RoundEvents.OnRoundEnded += RecordRoundResult;
-
         roundController.StartRound(currentRound);
     }
 
