@@ -16,6 +16,8 @@ namespace UI
         [SerializeField] private PlayerController player;
         [SerializeField] private AIController aiPlayer;
 
+        [SerializeField] private GameObject roundConters;
+
         [SerializeField] private TextMeshProUGUI targetNumDisplay;
 
         private void OnEnable()
@@ -70,6 +72,14 @@ namespace UI
         public List<int> GetPlayerNums()
         {
             return player.GetSelectedNums();
+        }
+
+        public void SetRoundCounters(int roundCount)
+        {
+            foreach (Transform child in roundConters.transform)
+            {
+                child.gameObject.SetActive(true);
+            }
         }
     }
 }

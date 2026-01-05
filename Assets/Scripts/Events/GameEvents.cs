@@ -7,7 +7,7 @@ namespace Events
     {
         public static Action OnFirstInput;
 
-        public static void ResetEvents()
+        public static void Clear()
         {
             OnFirstInput = null;
         }

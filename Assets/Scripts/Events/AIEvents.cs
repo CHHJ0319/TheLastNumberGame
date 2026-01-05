@@ -8,7 +8,7 @@ namespace Events
         public static Action<int, int> OnAITurnStarted;
         public static Action OnAITurnFinished;
 
-        public static void ResetEvents()
+        public static void Clear()
         {
             OnAITurnStarted = null;
             OnAITurnFinished = null;

@@ -8,7 +8,7 @@ namespace Events
         public static Action<int, int> OnPlayerTurnStarted;
         public static Action OnPlayerTurnFinished;
 
-        public static void ResetEvents()
+        public static void Clear()
         {
             OnPlayerTurnStarted = null;
             OnPlayerTurnFinished = null;

@@ -32,22 +32,30 @@ namespace Round
 
         public void StartRound(int curRound)
         {
-            StartIntroPhase();
-            StartCoroutine(StartMainPhase(curRound));
-            StartOutroPhase();
+            StartCoroutine(StartRoundSequence(curRound));
         }
 
-        private void StartIntroPhase()
+        IEnumerator StartRoundSequence(int round)
+        {
+            yield return StartCoroutine(StartIntroPhase());
+            yield return StartCoroutine(StartMainPhase(round));
+            yield return StartCoroutine(StartOutroPhase(round));
+        }
+
+
+        private IEnumerator StartIntroPhase()
         {
             SetTargetNum();
             aiNumbers = new List<int>();
             SetAIStrategy();
+
+            yield return null;
         }
 
         private IEnumerator StartMainPhase(int curRound)
         {
             curNum = 1;
-            if (!playerFirstRounds.Contains(curRound))
+            if (playerFirstRounds.Contains(curRound))
             {
                 while (true)
                 {
@@ -56,6 +64,7 @@ namespace Round
                     if (CheckTargetReached())
                     {
                         isPlayerWinner = false;
+
                         yield break;
                     }
 
@@ -102,9 +111,13 @@ namespace Round
                 }
             }
         }
-        private void StartOutroPhase()
+
+        private IEnumerator StartOutroPhase(int curRound)
         {
-            
+            Events.RoundEvents.RecordRoundResult(curRound, isPlayerWinner);
+            Algorythm.SceneLoader.LoadSceneByName("EndingScene");
+
+            yield return null;
         }
 
 
