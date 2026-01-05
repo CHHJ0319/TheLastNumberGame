@@ -89,6 +89,7 @@ namespace UI
                 if (i < curRound - 1)
                 {
                     child.gameObject.SetActive(true);
+                    child.GetComponent<RoundCounter>().SetColor(roundResults[i]);
                 }
                 else
                 {

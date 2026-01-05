@@ -7,7 +7,7 @@ namespace UI
     {
         private Image uiImg;
 
-        private void Start ()
+        private void Awake ()
         {
             uiImg = GetComponent<Image>();
         }
