@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.TestScene
+namespace UI.TitleScne
 {
     public class BlinkingPrompt : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Threading.Tasks; // [필수] Awaitable 쓰려면 이거 있어야 함
 
-namespace UI.TestScene
+namespace UI.TitleScne
 {
     public class StartButton : MonoBehaviour
     {
