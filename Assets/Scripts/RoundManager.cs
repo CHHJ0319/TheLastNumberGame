@@ -50,6 +50,6 @@ public static class RoundManager
 
     public static bool IsLastRound()
     {
-        return currentRound == totalRound;
+        return currentRound == totalRound + 1;
     }
 }
