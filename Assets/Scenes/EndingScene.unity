@@ -460,6 +460,7 @@ MonoBehaviour:
   menuButtons: {fileID: 0}
   player: {fileID: 0}
   aiPlayer: {fileID: 0}
+  roundDisplay: {fileID: 0}
   roundConters: {fileID: 0}
   targetNumDisplay: {fileID: 0}
   nextButton: {fileID: 1293942704}
@@ -681,7 +682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 187, y: -233}
+  m_AnchoredPosition: {x: 180, y: -230}
   m_SizeDelta: {x: 187.38, y: 105.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293942704
@@ -748,7 +749,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3447773276157985429, guid: 458dd6514f413994e84fb1f9e9e2109d, type: 3}
+  m_Sprite: {fileID: 5508977250811098176, guid: 123d930f3656c8045b9d94ee0fd2c4ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -816,7 +817,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 187, y: -233}
+  m_AnchoredPosition: {x: 180, y: -230}
   m_SizeDelta: {x: 187.38, y: 105.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660301192
@@ -883,7 +884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3447773276157985429, guid: 458dd6514f413994e84fb1f9e9e2109d, type: 3}
+  m_Sprite: {fileID: 5508977250811098176, guid: 123d930f3656c8045b9d94ee0fd2c4ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -910,10 +911,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1660301190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb87448cb8f3f9c4fb7844a49bb77cc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 821c9a145e732134b942125e9e13d79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: TitleScene
 --- !u!1 &1879238666
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 1879238669}
   - component: {fileID: 1879238668}
   m_Layer: 5
-  m_Name: PanelImage
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1242,6 +1242,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2048033349}
     m_Modifications:
+    - target: {fileID: 3392890025274935362, guid: b6eec6b70b246134db213b91ab7533b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1023708396054178936, guid: 4ac84dd243eef8a44b58bd0052f5f510, type: 3}
     - target: {fileID: 3861325219472235176, guid: b6eec6b70b246134db213b91ab7533b6, type: 3}
       propertyPath: m_Name
       value: ExitButton
@@ -1308,11 +1312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4641199056060195728, guid: b6eec6b70b246134db213b91ab7533b6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -181
+      value: -178
       objectReference: {fileID: 0}
     - target: {fileID: 4641199056060195728, guid: b6eec6b70b246134db213b91ab7533b6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -233
+      value: -229
       objectReference: {fileID: 0}
     - target: {fileID: 4641199056060195728, guid: b6eec6b70b246134db213b91ab7533b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

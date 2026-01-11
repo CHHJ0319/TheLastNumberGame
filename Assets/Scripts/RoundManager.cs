@@ -2,7 +2,7 @@ public static class RoundManager
 {
     private static Round.RoundController roundController;
 
-    private static int totalRound = 10;
+    private static int totalRound = 4;
     private static int currentRound = 1;
     private static bool[] roundWinResults = new bool[totalRound];
 
@@ -18,8 +18,10 @@ public static class RoundManager
 
     public static void StartRound()
     {
-        UIManager.UpdateRoundDisplay(currentRound);
         UIManager.SetGameScene(currentRound);
+        UIManager.UpdateRoundDisplay(currentRound);
+        UIManager.SetEnemySprite(currentRound);
+
         roundController.StartRound(currentRound);
     }
 
@@ -37,5 +39,12 @@ public static class RoundManager
     private static void SetNextRound()
     {
         currentRound++;
+    }
+
+    public static void ResetRoundData()
+    {
+        currentRound = 1;
+
+        roundWinResults = new bool[totalRound];
     }
 }

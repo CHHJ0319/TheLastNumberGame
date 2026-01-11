@@ -120,7 +120,6 @@ namespace Round
 
         private IEnumerator StartAITurn()
         {
-           // Events.AIEvents.StartAITurn(curNum, targetNum);
             int countToCall = aIController.DecideHowManyToCall(curNum, 3);
 
             aiNumbers = new List<int>();

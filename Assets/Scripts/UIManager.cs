@@ -16,22 +16,27 @@ public static class UIManager
         uiController = controller;
     }
 
-    public static void UpdateRoundDisplay(int round)
-    {
-        uiController.UpdateRoundDisplay(round);
-    }
-
-    public static void UpdateTargetNumDisplay(int number)
-    {
-        uiController.UpdateTargetNumDisplay(number);
-    }
-
     public static void SetGameScene(int curRound)
     {
         if (uiController != null)
         {
             uiController.SetRoundCounters(curRound);
         }
+    }
+
+    public static void UpdateRoundDisplay(int round)
+    {
+        uiController.UpdateRoundDisplay(round);
+    }
+
+    public static void SetEnemySprite(int round)
+    {
+        uiController.SetEnemySprite(round);
+    }
+
+    public static void UpdateTargetNumDisplay(int number)
+    {
+        uiController.UpdateTargetNumDisplay(number);
     }
 
     public static void SetEndingScene()

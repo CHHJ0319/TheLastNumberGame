@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 namespace UI 
@@ -80,6 +81,11 @@ namespace UI
                     }
                 }
             }
+        }
+
+        public void SetEnemySprite(int round)
+        {
+            aiPlayer.SetEnemySprite(round);
         }
 
         public void UpdateTargetNumDisplay(int number)

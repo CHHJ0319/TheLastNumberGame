@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace UI 
 {
-    public class QuitButton : MonoBehaviour
+    public class ExitButton : MonoBehaviour
     {
         private void Start()
         {

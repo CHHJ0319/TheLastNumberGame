@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AIController : MonoBehaviour
 {
+    [SerializeField] private GameObject aiSprites;
+
     [SerializeField] private UI.Hand hand;
 
     private int maxSelectable = 3;
@@ -14,8 +17,22 @@ public class AIController : MonoBehaviour
     public void Initalize (int targetNum)
     {
         calculator = new Algorythm.NimStrategyCalculator();
-
         winningNumbers = calculator.GenerateWinningNumbers(targetNum, maxSelectable);
+    }
+
+    public void SetEnemySprite(int round)
+    {
+        for (int i = 0;i < 4; i++)
+        {
+            if(i == round - 1)
+            {
+                aiSprites.transform.GetChild(i).gameObject.SetActive(true);
+            }
+            else
+            {
+                aiSprites.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
     }
 
     public void CreateHand(int curNum, int targetNum)
