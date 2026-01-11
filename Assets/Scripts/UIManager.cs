@@ -26,12 +26,11 @@ public static class UIManager
         uiController.UpdateTargetNumDisplay(number);
     }
 
-    public static void SetGameScene(int curRound, bool[] roundResults)
+    public static void SetGameScene(int curRound)
     {
         if (uiController != null)
         {
-            bool[] resultsCopy = (bool[])roundResults.Clone();
-            uiController.SetRoundCounters(curRound, resultsCopy);
+            uiController.SetRoundCounters(curRound);
         }
     }
 

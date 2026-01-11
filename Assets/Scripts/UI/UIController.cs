@@ -57,20 +57,27 @@ namespace UI
             }
         }
 
-        public void SetRoundCounters(int curRound, bool[] roundResults)
+        public void SetRoundCounters(int curRound)
         {
             for (int i = 0; i < curRound; i++)
             {
                 Transform child = roundConters.transform.GetChild(i);
 
-                if (i < curRound - 1)
+                if (i > curRound - 1)
                 {
-                    child.gameObject.SetActive(true);
-                    child.GetComponent<RoundCounter>().SetColor(roundResults[i]);
+                    child.gameObject.SetActive(false);
                 }
                 else
                 {
-                    child.gameObject.SetActive(false);
+                    child.gameObject.SetActive(true);
+                    if(i <  curRound - 1)
+                    {
+                        child.gameObject.GetComponent<RoundCounter>().SetColor(true);
+                    }
+                    else
+                    {
+                        child.gameObject.GetComponent<RoundCounter>().SetColor(false);
+                    }
                 }
             }
         }

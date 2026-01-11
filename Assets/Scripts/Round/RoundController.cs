@@ -45,7 +45,7 @@ namespace Round
 
         private IEnumerator StartIntroPhase(int curRound)
         {
-            UIManager.UpdateRoundDisplay(curRound);
+
             SetTargetNum();
             aiNumbers = new List<int>();
             SetAIStrategy();

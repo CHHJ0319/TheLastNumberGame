@@ -18,8 +18,9 @@ public static class RoundManager
 
     public static void StartRound()
     {
+        UIManager.UpdateRoundDisplay(currentRound);
+        UIManager.SetGameScene(currentRound);
         roundController.StartRound(currentRound);
-        UIManager.SetGameScene(currentRound, roundWinResults);
     }
 
     public static int GetCurrentRound()
