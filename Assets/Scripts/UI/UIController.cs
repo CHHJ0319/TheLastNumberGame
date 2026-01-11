@@ -22,6 +22,8 @@ namespace UI
         [SerializeField] private GameObject roundConters;
         [SerializeField] private TextMeshProUGUI targetNumDisplay;
 
+        [SerializeField] private TextMeshProUGUI dialogText;
+
         [Header("EndingScene")]
         [SerializeField] private GameObject winImage;
         [SerializeField] private GameObject defeatImage;
@@ -146,6 +148,11 @@ namespace UI
                 nextButton.gameObject.SetActive(false);
                 retryButton.gameObject.SetActive(true);
             }
+        }
+
+        public void SetDialogText(string message)
+        {
+            dialogText.text = message;
         }
     }
 }

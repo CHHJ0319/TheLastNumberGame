@@ -47,10 +47,15 @@ namespace Round
         {
 
             SetTargetNum();
+
             aiNumbers = new List<int>();
             SetAIStrategy();
-
             yield return null;
+
+            UIManager.SetStartDialogText(curRound);
+            yield return new WaitForSeconds(1.5f);
+
+
         }
 
         private IEnumerator StartMainPhase(int curRound)
@@ -59,6 +64,8 @@ namespace Round
 
             while (true)
             {
+                UIManager.SetRandomDialogText(curRound);
+
                 yield return StartCoroutine(StartPlayerTurn());
                 nextNum = playerNumbers[^1];
                 if (CheckTargetReached())
@@ -87,6 +94,18 @@ namespace Round
 
         private IEnumerator StartOutroPhase(int curRound)
         {
+            if(isPlayerWinner)
+            {
+                UIManager.SetDefeatDialogText(curRound);
+            }
+            else
+            {
+                UIManager.SetWinDialogText(curRound);
+
+            }
+
+            yield return new WaitForSeconds(1.5f);
+
             Events.RoundEvents.RecordRoundResult(curRound, isPlayerWinner);
             Algorythm.SceneLoader.LoadSceneByName("EndingScene");
 

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
         Events.RoundEvents.Clear();
         UIManager.Initailize();
         RoundManager.Initialize();
+        ActorManager.Initialize();
 
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "GameScene")
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void StartGameSecne()
     {
+        ActorManager.GenerateEnemyProfile();
         RoundManager.StartRound();
     }
 
