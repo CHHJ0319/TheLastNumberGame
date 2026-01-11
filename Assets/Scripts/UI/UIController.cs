@@ -25,10 +25,13 @@ namespace UI
         [SerializeField] private TextMeshProUGUI dialogText;
 
         [Header("EndingScene")]
+        [SerializeField] private GameObject roundEnding;
         [SerializeField] private GameObject winImage;
         [SerializeField] private GameObject defeatImage;
         [SerializeField] private Button nextButton;
         [SerializeField] private Button retryButton;
+
+        [SerializeField] private GameObject gameEnding;
 
 
         private void OnEnable()
@@ -45,6 +48,11 @@ namespace UI
             Events.GameEvents.OnFirstInput -= ShowMainMenu;
             Events.PlayerEvents.OnPlayerTurnStarted -= CreatePlayerHand;
             Events.AIEvents.OnAITurnStarted -= CreateAIHand;
+        }
+
+        private void SetButtonAction()
+        {
+            nextButton.onClick.AddListener(OnNextButtonClicked);
         }
 
         public void UpdateRoundDisplay(int round)
@@ -132,7 +140,9 @@ namespace UI
 
         public void SetEndingSceneUI(bool isPlayerWinner)
         {
-            if(isPlayerWinner)
+            SetButtonAction();
+
+            if (isPlayerWinner)
             {
                 winImage.gameObject.SetActive(true);
                 defeatImage.gameObject.SetActive(false);
@@ -153,6 +163,24 @@ namespace UI
         public void SetDialogText(string message)
         {
             dialogText.text = message;
+        }
+
+        private void OnNextButtonClicked()
+        {
+            string targetScene = "GameScene";
+           
+            if (RoundManager.IsLastRound())
+            {
+                roundEnding.SetActive(false);
+                gameEnding.SetActive(true);
+            }
+            else
+            {
+                roundEnding.SetActive(true);
+                gameEnding.SetActive(false);
+
+                Algorythm.SceneLoader.LoadSceneByName(targetScene);
+            } 
         }
     }
 }

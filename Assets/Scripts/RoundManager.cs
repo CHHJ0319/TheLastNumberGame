@@ -47,4 +47,9 @@ public static class RoundManager
 
         roundWinResults = new bool[totalRound];
     }
+
+    public static bool IsLastRound()
+    {
+        return currentRound == totalRound;
+    }
 }

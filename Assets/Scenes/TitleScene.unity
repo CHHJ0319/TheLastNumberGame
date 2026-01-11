@@ -1033,6 +1033,7 @@ MonoBehaviour:
   roundDisplay: {fileID: 0}
   roundConters: {fileID: 0}
   targetNumDisplay: {fileID: 0}
+  dialogText: {fileID: 0}
   winImage: {fileID: 0}
   defeatImage: {fileID: 0}
   nextButton: {fileID: 0}
@@ -1466,7 +1467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &990591257
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2076,7 +2077,7 @@ MonoBehaviour:
   m_text: "\uBE60\uB77C\uB9C8\uBE60\uBC25\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c854aa6989d7c4041bcca37c3381c381, type: 2}
-  m_sharedMaterial: {fileID: -4617214408422657141, guid: c854aa6989d7c4041bcca37c3381c381, type: 2}
+  m_sharedMaterial: {fileID: -3670056629724142805, guid: c854aa6989d7c4041bcca37c3381c381, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
