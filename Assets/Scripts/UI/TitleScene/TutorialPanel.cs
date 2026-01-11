@@ -37,12 +37,11 @@ namespace UI.TitleScne
 
         private void SetDescriptionTexts()
         {
-            descriptionTexts = new string[4];
+            descriptionTexts = new string[3];
 
             descriptionTexts[0] = Text.TutorialText.TutorialText1;
             descriptionTexts[1] = Text.TutorialText.TutorialText2;
-            descriptionTexts[2] = Text.TutorialText.TutorialText3;
-            descriptionTexts[3] = Text.TutorialText.TutorialText4;
+            descriptionTexts[2] = Text.TutorialText.TutorialText3;;
         }
 
         private void SetTutorialPanel()
@@ -62,7 +61,7 @@ namespace UI.TitleScne
                 previousBtn.gameObject.SetActive(false);
             }
 
-            if (tutorialIndex < 3)
+            if (tutorialIndex < 2)
             {
                 nextBtn.gameObject.SetActive(true);
             }
@@ -74,7 +73,7 @@ namespace UI.TitleScne
 
         private void ShowDescription()
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 2; i++)
             {
                 if(i == tutorialIndex)
                 {

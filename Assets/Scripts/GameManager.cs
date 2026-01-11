@@ -17,10 +17,19 @@ public class GameManager : MonoBehaviour
         {
             StartGameSecne();
         }
+        else if (currentScene.name == "IntroScene")
+        {
+            StartIntroSecne();
+        }
         else if (currentScene.name == "EndingScene")
         {
             StartEndingSecne();
         }
+    }
+
+    private void StartIntroSecne()
+    {
+        UIManager.SetIntroSceneDialogText(0);
     }
 
     private void StartGameSecne()

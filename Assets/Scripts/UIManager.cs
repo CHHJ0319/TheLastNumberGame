@@ -63,6 +63,31 @@ public static class UIManager
         _isPlayerWinner = isPlayerWinner;
     }
 
+    public static void SetIntroSceneDialogText(int index)
+    {
+        string dialog = "";
+        switch (index)
+        {
+            case 0:
+                dialog = Text.IntroSceneText.Text1;
+                break;
+            case 1:
+                dialog = Text.IntroSceneText.Text2;
+                break;
+            case 2:
+                dialog = Text.IntroSceneText.Text3;
+                break;
+            case 3:
+                dialog = Text.IntroSceneText.Text4;
+                break;
+            case 4:
+                dialog = Text.IntroSceneText.Text5;
+                break;
+        }
+
+        uiController.SetDialogText(dialog);
+    }
+
     public static void SetStartDialogText(int round)
     {
         Data.EnemyData enemy = ActorManager.Enemies[round - 1];

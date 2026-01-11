@@ -10,6 +10,9 @@ namespace UI
 {
     public class UIController : MonoBehaviour
     {
+        [Header("Global Settings")]
+        [SerializeField] private TextMeshProUGUI dialogText;
+
         [Header("TitleScene")]
         [SerializeField] private GameObject startPrompt;
         [SerializeField] private GameObject menuButtons;
@@ -21,8 +24,6 @@ namespace UI
         [SerializeField] private GameObject roundDisplay;
         [SerializeField] private GameObject roundConters;
         [SerializeField] private TextMeshProUGUI targetNumDisplay;
-
-        [SerializeField] private TextMeshProUGUI dialogText;
 
         [Header("EndingScene")]
         [SerializeField] private GameObject roundEnding;
