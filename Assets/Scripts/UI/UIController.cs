@@ -23,6 +23,8 @@ namespace UI
         [SerializeField] private TextMeshProUGUI targetNumDisplay;
 
         [Header("EndingScene")]
+        [SerializeField] private GameObject winImage;
+        [SerializeField] private GameObject defeatImage;
         [SerializeField] private Button nextButton;
         [SerializeField] private Button retryButton;
 
@@ -130,11 +132,17 @@ namespace UI
         {
             if(isPlayerWinner)
             {
+                winImage.gameObject.SetActive(true);
+                defeatImage.gameObject.SetActive(false);
+
                 nextButton.gameObject.SetActive(true);
                 retryButton.gameObject.SetActive(false);
             }
             else
             {
+                winImage.gameObject.SetActive(false);
+                defeatImage.gameObject.SetActive(true);
+
                 nextButton.gameObject.SetActive(false);
                 retryButton.gameObject.SetActive(true);
             }
