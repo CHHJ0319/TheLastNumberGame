@@ -56,61 +56,33 @@ namespace Round
         private IEnumerator StartMainPhase(int curRound)
         {
             curNum = 1;
-            if (playerFirstRounds.Contains(curRound))
+
+            while (true)
             {
-                while (true)
+                yield return StartCoroutine(StartPlayerTurn());
+                nextNum = playerNumbers[^1];
+                if (CheckTargetReached())
                 {
-                    yield return StartCoroutine(StartPlayerTurn());
-                    nextNum = playerNumbers[^1];
-                    if (CheckTargetReached())
-                    {
-                        isPlayerWinner = false;
+                    isPlayerWinner = false;
 
-                        yield break;
-                    }
-
-                    curNum = nextNum + 1;
-                    yield return null;
-
-                    yield return StartCoroutine(StartAITurn());
-                    nextNum = aiNumbers[^1];
-                    if (CheckTargetReached())
-                    {
-                        isPlayerWinner = true;
-                        yield break;
-                    }
-
-                    curNum = nextNum + 1;
-                    yield return null;
+                    yield break;
                 }
-            }
-            else
-            {
-                while (true)
+
+                curNum = nextNum + 1;
+                yield return null;
+
+                yield return StartCoroutine(StartAITurn());
+                nextNum = aiNumbers[^1];
+                if (CheckTargetReached())
                 {
-                    yield return StartCoroutine(StartAITurn());
-                    nextNum = aiNumbers[^1];
-                    if (CheckTargetReached())
-                    {
-                        isPlayerWinner = true;
-                        yield break;
-                    }
-
-                    curNum = nextNum + 1;
-                    yield return null;
-
-                    yield return StartCoroutine(StartPlayerTurn());
-                    nextNum = playerNumbers[^1];
-                    if (CheckTargetReached())
-                    {
-                        isPlayerWinner = false;
-                        yield break;
-                    }
-
-                    curNum = nextNum + 1;
-                    yield return null;
+                    isPlayerWinner = true;
+                    yield break;
                 }
+
+                curNum = nextNum + 1;
+                yield return null;
             }
+            
         }
 
         private IEnumerator StartOutroPhase(int curRound)
