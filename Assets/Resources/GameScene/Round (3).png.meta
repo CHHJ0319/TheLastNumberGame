@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 88185c1d9994f2d40a6a169da25e1494
+guid: ab77e572bf7abdf499237ff27fb68566
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6764226505903678531
-    second: PanelABase_0
+      213: -8793182985053499600
+    second: Round (3)_0
+  - first:
+      213: 5154813860022353964
+    second: Round (3)_1
+  - first:
+      213: 1560077664087653933
+    second: Round (3)_2
+  - first:
+      213: 3318707505902320815
+    second: Round (3)_3
+  - first:
+      213: -3031646694792285337
+    second: Round (3)_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,17 +121,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PanelABase_0
+      name: Round (3)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 763
-        height: 227
+        x: 90
+        y: 200
+        width: 53
+        height: 83
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +153,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dbb545fc4d3a022a0800000000000000
-      internalID: -6764226505903678531
+      spriteID: 03f80e2d9a658f580800000000000000
+      internalID: -8793182985053499600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (3)_1
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 200
+        width: 46
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2084e1f4e3998740800000000000000
+      internalID: 5154813860022353964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (3)_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 202
+        width: 34
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2e37fdae5286a510800000000000000
+      internalID: 1560077664087653933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (3)_3
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 200
+        width: 51
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: facfab2b4ea6e0e20800000000000000
+      internalID: 3318707505902320815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (3)_4
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 202
+        width: 49
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7633b68b46d6de5d0800000000000000
+      internalID: -3031646694792285337
       vertices: []
       indices: 
       edges: []
@@ -138,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PanelABase_0: -6764226505903678531
+      Round (3)_0: -8793182985053499600
+      Round (3)_1: 5154813860022353964
+      Round (3)_2: 1560077664087653933
+      Round (3)_3: 3318707505902320815
+      Round (3)_4: -3031646694792285337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

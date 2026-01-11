@@ -16,6 +16,16 @@ public static class UIManager
         uiController = controller;
     }
 
+    public static void UpdateRoundDisplay(int round)
+    {
+        uiController.UpdateRoundDisplay(round);
+    }
+
+    public static void UpdateTargetNumDisplay(int number)
+    {
+        uiController.UpdateTargetNumDisplay(number);
+    }
+
     public static void SetGameScene(int curRound, bool[] roundResults)
     {
         if (uiController != null)
@@ -41,11 +51,6 @@ public static class UIManager
     public static List<int> GetPlayerNums()
     {
         return uiController.GetPlayerNums();
-    }
-
-    public static void UpdateTargetNumDisplay(int number)
-    {
-        uiController.UpdateTargetNumDisplay(number);
     }
 
     private static void SetIsPlayerWinner(int curRound, bool isPlayerWinner)

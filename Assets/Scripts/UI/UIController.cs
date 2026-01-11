@@ -17,8 +17,8 @@ namespace UI
         [SerializeField] private PlayerController player;
         [SerializeField] private AIController aiPlayer;
 
+        [SerializeField] private GameObject roundDisplay;
         [SerializeField] private GameObject roundConters;
-
         [SerializeField] private TextMeshProUGUI targetNumDisplay;
 
         [Header("EndingScene")]
@@ -42,42 +42,19 @@ namespace UI
             Events.AIEvents.OnAITurnStarted -= CreateAIHand;
         }
 
-        public void ShowMainMenu()
+        public void UpdateRoundDisplay(int round)
         {
-            startPrompt.SetActive(false);
-            menuButtons.SetActive(true);
-        }
-
-        public void CreatePlayerHand(int curNum, int targetNum)
-        {
-            player.CreateHand(curNum, targetNum);
-        }
-
-        public void CreateAIHand(int curNum, int targetNum)
-        {
-            aiPlayer.CreateHand(curNum, targetNum);
-        }
-
-        public void UpdateTargetNumDisplay(int number)
-        {
-            targetNumDisplay.text = number.ToString();
-        }
-
-        public bool CanSubmit()
-        {
-            if (player.GetSelectedCount() > 0)
+            for (int i = 0; i < roundDisplay.transform.childCount; i++)
             {
-                return true;
+                if (i == round - 1)
+                {
+                    roundDisplay.transform.GetChild(i).gameObject.SetActive(true);
+                }
+                else
+                {
+                    roundDisplay.transform.GetChild(i).gameObject.SetActive(false);
+                }
             }
-            else
-            {
-                return false;
-            }
-        }
-
-        public List<int> GetPlayerNums()
-        {
-            return player.GetSelectedNums();
         }
 
         public void SetRoundCounters(int curRound, bool[] roundResults)
@@ -96,6 +73,44 @@ namespace UI
                     child.gameObject.SetActive(false);
                 }
             }
+        }
+
+        public void UpdateTargetNumDisplay(int number)
+        {
+            targetNumDisplay.text = number.ToString();
+        }
+
+        public void ShowMainMenu()
+        {
+            startPrompt.SetActive(false);
+            menuButtons.SetActive(true);
+        }
+
+        public void CreatePlayerHand(int curNum, int targetNum)
+        {
+            player.CreateHand(curNum, targetNum);
+        }
+
+        public void CreateAIHand(int curNum, int targetNum)
+        {
+            aiPlayer.CreateHand(curNum, targetNum);
+        }
+
+        public bool CanSubmit()
+        {
+            if (player.GetSelectedCount() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public List<int> GetPlayerNums()
+        {
+            return player.GetSelectedNums();
         }
 
         public void SetEndingSceneUI(bool isPlayerWinner)

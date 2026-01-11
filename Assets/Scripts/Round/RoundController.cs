@@ -37,14 +37,15 @@ namespace Round
 
         IEnumerator StartRoundSequence(int round)
         {
-            yield return StartCoroutine(StartIntroPhase());
+            yield return StartCoroutine(StartIntroPhase(round));
             yield return StartCoroutine(StartMainPhase(round));
             yield return StartCoroutine(StartOutroPhase(round));
         }
 
 
-        private IEnumerator StartIntroPhase()
+        private IEnumerator StartIntroPhase(int curRound)
         {
+            UIManager.UpdateRoundDisplay(curRound);
             SetTargetNum();
             aiNumbers = new List<int>();
             SetAIStrategy();

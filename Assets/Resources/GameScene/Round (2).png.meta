@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: ec7c9cdba2d4aae48b9c13b9f8244158
+guid: e08e077ad245e4b42827f5da8897f583
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3319868620694601340
-    second: BGGame_Spotlight_0
+      213: -7341761744690161481
+    second: Round (2)_0
+  - first:
+      213: -3586039332183239473
+    second: Round (2)_1
+  - first:
+      213: 8895665976488821452
+    second: Round (2)_2
+  - first:
+      213: -977874685338538808
+    second: Round (2)_3
+  - first:
+      213: 8847875251390361604
+    second: Round (2)_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,17 +121,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BGGame_Spotlight_0
+      name: Round (2)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 753
-        height: 980
+        x: 90
+        y: 200
+        width: 52
+        height: 83
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +153,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 481488234157de1d0800000000000000
-      internalID: -3319868620694601340
+      spriteID: 7b8d03e6792dc1a90800000000000000
+      internalID: -7341761744690161481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (2)_1
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 200
+        width: 49
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc493ae1a34db3ec0800000000000000
+      internalID: -3586039332183239473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (2)_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 202
+        width: 34
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc205290311c37b70800000000000000
+      internalID: 8895665976488821452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (2)_3
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 200
+        width: 51
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ccac899724ed62f0800000000000000
+      internalID: -977874685338538808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (2)_4
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 202
+        width: 49
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 400b710c9a7f9ca70800000000000000
+      internalID: 8847875251390361604
       vertices: []
       indices: 
       edges: []
@@ -138,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BGGame_Spotlight_0: -3319868620694601340
+      Round (2)_0: -7341761744690161481
+      Round (2)_1: -3586039332183239473
+      Round (2)_2: 8895665976488821452
+      Round (2)_3: -977874685338538808
+      Round (2)_4: 8847875251390361604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

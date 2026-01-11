@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: f4d54452535fd7e4a8caaa9c99bda386
+guid: 85c9880bf3ae6a642935d7d6874046e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6531672561741314964
-    second: PanelACheckB_0
+      213: -4508568170785578828
+    second: Round (1)_0
+  - first:
+      213: -3217904275298177931
+    second: Round (1)_1
+  - first:
+      213: -2015480382752763653
+    second: Round (1)_2
+  - first:
+      213: -6274549314527285975
+    second: Round (1)_3
+  - first:
+      213: 4887234159358806090
+    second: Round (1)_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,17 +121,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PanelACheckB_0
+      name: Round (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 39
-        height: 38
+        x: 90
+        y: 200
+        width: 52
+        height: 83
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +153,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c644e305966da55a0800000000000000
-      internalID: -6531672561741314964
+      spriteID: 4b061b6d2295e61c0800000000000000
+      internalID: -4508568170785578828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (1)_1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 202
+        width: 16
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c24ad5c15b753d0800000000000000
+      internalID: -3217904275298177931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (1)_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 202
+        width: 34
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf0d04635439704e0800000000000000
+      internalID: -2015480382752763653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (1)_3
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 200
+        width: 51
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d2ee574a25ce8a0800000000000000
+      internalID: -6274549314527285975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Round (1)_4
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 202
+        width: 49
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a488cb20391f2d340800000000000000
+      internalID: 4887234159358806090
       vertices: []
       indices: 
       edges: []
@@ -138,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PanelACheckB_0: -6531672561741314964
+      Round (1)_0: -4508568170785578828
+      Round (1)_1: -3217904275298177931
+      Round (1)_2: -2015480382752763653
+      Round (1)_3: -6274549314527285975
+      Round (1)_4: 4887234159358806090
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
